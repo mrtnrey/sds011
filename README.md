@@ -1,5 +1,5 @@
-# Fine dust sensor SDS011 -- wired
-Reading SDS011 sensor on a flashed TP-Link TL-MR3020 running LEDE and send values to madavi.de
+# Fine dust sensor SDS011 on a flashed router
+Reading a SDS011 sensor on a flashed TP-Link TL-MR3020 running LEDE and send values to madavi.de
 
 ## CAUTION
 Although the software is tested & running on my own device, you should be aware of flashing a router is not without risk.
