@@ -17,6 +17,7 @@ If you have access to a Wifi network (e.g. your own), don't read further and ord
 If
 - you don't have access to Wifi, only to a wired network,
 - or you would like to have more control on your SDS011 with Python
+
 then you can consider this repository.
 
 ## How to install
