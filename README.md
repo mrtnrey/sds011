@@ -12,7 +12,7 @@ If you flash your router,
 Concerning latter point: the TL-MR3020 router can be unbricked quite easily (own experience...).
 
 ## Motivation
-If you have access to a Wifi network (e.g. your own), don't read further and order an ESP8266, follow the instructions on [Luftdaten.info], and you're set.
+If you have access to a Wifi network (e.g. your own), don't read further and order an ESP8266, follow the instructions on [Luftdaten.info](http://luftdaten.info), and you're set.
 If
 - you don't have access to Wifi, only to a wired network,
 - or you would like to have more control on your SDS011 with Python
