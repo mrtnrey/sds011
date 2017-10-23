@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>SDS011 dashboard</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+   <style>
+      .table {
+      table-layout: fixed;
+      }
+      #top {
+      padding:0.5em 0em 0.1em 0em;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="container">
+
+   <h2 id="top">SDS011 dashboard</h2>
+
+   <h4>Node and sensor</h4>
+   <table class="table table-striped">
+      <tr>
+         <td>TLMR-3020 S/N</td>
+         <td id="tlmr_sn"></td>
+      </tr>
+      <tr>
+         <td>SDS011 firmware</td>
+         <td id="sds011_firmware"></td>
+      </tr>
+      <tr>
+         <td>SDS011 device id</td>
+         <td id="sds011_deviceid"></td>
+      </tr>
+   </table>
+
+   <h4>Latest measurement</h4>
+   <table class="table table-striped">
+      <tr>
+         <td>Time</td>
+         <td id="time"></td>
+      </tr>
+      <tr>
+         <td>PM2.5</td>
+         <td id="pm25_now"></td>
+      </tr>
+      <tr>
+         <td>PM10</td>
+         <td id="pm10_now"></td>
+      </tr>
+   </table>
+
+   <h4>Madavi</h4>
+   <p id="noteMadavi"></p>
+   <table class="table table-striped">
+      <tr>
+         <td>Time of latest response</td>
+         <td id="madaviresptime"></td>
+      </tr>
+      <tr>
+         <td>Content of latest response</td>
+         <td id="madavirespcontent"></td>
+      </tr>
+      <tr>
+         <td>Sensor data on Madavi.de</td>
+         <td><a id="graphhref" href="">Graphs</a> and <a id="csvhref" href="">CSV files</a></td>
+      </tr>
+   </table>
+
+   <p class="lead">Project on GitHub: <a href="https://github.com/mrtnrey/sds011">https://github.com/mrtnrey/sds011</a><br />
+      Based on the sds011.py module of Frank Heuer: <a href="https://gitlab.com/frankrich/sds011_particle_sensor/">https://gitlab.com/frankrich/sds011_particle_sensor/</a>
+   </p>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <script>
+      function timeConverter(UNIX_timestamp){
+        var a = new Date(UNIX_timestamp * 1000);
+        var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        var year = a.getFullYear();
+        var month = months[a.getMonth()];
+        var date = a.getDate();
+        var hour = a.getHours();
+        var min = "0" + a.getMinutes();
+        var sec = "0" + a.getSeconds();
+        var formattedTime = hour + ':' + min.substr(-2) + ':' + sec.substr(-2);
+        var time = date + '-' + month + '-' + year + ' ' + formattedTime;
+        return time;
+      }
+      
+      $(document).ready(function() {
+      
+      $.ajaxSetup({ cache: false });
+      
+      $.getJSON('sensorNode.json',function(data) {
+      	$("#tlmr_sn").html(data.tlmr3020sn);
+      	$("#sds011_firmware").html(data.SDS011_firmware);
+      	$("#sds011_deviceid").html(data.SDS011_deviceid);
+      
+        if ( data.tlmr3020sn == "TEST" ){
+      	$("#noteMadavi").html("ATTENTION: at this moment the sensor is running in TEST mode and is sending its data only to this website.<br>To upload to madavi.de, store the serial number of your TL-MR3020 in the file \"/root/tlmr3020sn.txt\"  and reboot.");
+      	};
+      
+      	$("#madavi_grph").html(data.tlmr3020_sn);
+      
+      	linkGraph="https://www.madavi.de/sensor/graph.php?sensor=tlmr3020-" + data.tlmr3020sn + "-sds011";
+      	$("#graphhref").attr("href", linkGraph);
+      
+      	linkCSV="https://www.madavi.de/sensor/csvfiles.php?sensor=tlmr3020-" + data.tlmr3020sn;
+      	$("#csvhref").attr("href", linkCSV);
+      
+      });
+      
+      function loadLatst() {
+      
+      $.get('SDS011LatestTime.txt',function(tunix) {
+      	$("#time").html(timeConverter(tunix)+" LT")
+      });
+      
+      $.getJSON('SDS011LatestValues.json', function(data) {
+             $("#pm25_now").html(Math.round(data['sensordatavalues'][0]['value']) + " &mu;g/m<sup>3</sup>");
+             $("#pm10_now").html(Math.round(data['sensordatavalues'][1]['value']) + " &mu;g/m<sup>3</sup>");
+          });
+      
+      $.get('madaviLatestTime.txt',function(tunix) {
+      	$("#madaviresptime").html(timeConverter(tunix)+" LT")
+      });
+      
+      $.get('madaviLatestResponse.txt',function(data) {
+      	$("#madavirespcontent").html(data)
+      });
+      
+      
+      }
+      
+        loadLatst();
+        setInterval(function() {
+          loadLatst();
+        }, 10000);
+      
+      });
+      
+   </script>
+</body>
+</body>
+</html>

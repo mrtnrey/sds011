@@ -1,0 +1,13 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+
+opkg update
+opkg install python-light -d ram
+opkg install python-pyserial -d ram
+opkg install python-enum34 -d ram
+opkg install python-logging -d ram
+opkg install curl -d ram
+opkg install ca-bundle -d ram
+cd /root && LD_LIBRARY_PATH=/tmp/usr/lib/ ./tlmr3020-sds011.py > /dev/null 2>&1 &
+
+exit 0
