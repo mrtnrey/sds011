@@ -1,5 +1,5 @@
 # Fine dust sensor SDS011 on a flashed router
-Reading a SDS011 sensor on a flashed TP-Link TL-MR3020 running LEDE + Python, and send your measurement to madavi.de (option).
+Reading a SDS011 sensor on a flashed TP-Link TL-MR3020 running LEDE + Python, and send your measurement to madavi.de (option) over a *wired connection*.
 
 
 ## CAUTION
@@ -27,7 +27,7 @@ Flash your TL-MR3020 with a LEDE image containing everything you need.
 Further instructions in the readme of /baked_firmware.
 ### Method 2: build it yourself
 Build it yourself with the instructions and sources provided.
-This procedure should also hold for other routers than the TL-MR3020.
+This procedure should also hold for routers other than the TL-MR3020.
 Further instructions in the readme of /baked_firmware.
 
 ## Acknowledgements
