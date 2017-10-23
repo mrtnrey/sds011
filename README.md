@@ -32,5 +32,5 @@ Read the instructions in /sources.
 
 ## Acknowledgements
 - respository of Frank Heuer https://gitlab.com/frankrich/sds011_particle_sensor
-- the [OpenWRT](https://www.openwrt.org) / [OpenWRT](https//lede-project.org) project
-- the [Luftdaten](https://luftdaten.info) guys
+- the [OpenWRT](https://www.openwrt.org) / [OpenWRT](https://lede-project.org) project
+- the [Luftdaten](http://luftdaten.info) guys
