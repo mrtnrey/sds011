@@ -11,10 +11,23 @@ If you flash your router,
 
 Concerning latter point: the TL-MR3020 router can be unbricked quite easily (own experience...).
 
+## Motivation
+If you have access to a Wifi network (e.g. your own), don't read further and order an ESP8266, install the firmware of Luftdaten.info, and you're set.
+If
+- you don't have access to Wifi, only to a wired network,
+- or you would like to have more control on your SDS011 with Python
+then you can consider this repository.
+
 ## How to install
 For installing the software, you have two possibilities
-- flash your TL-MR3020 with a LEDE image containing everything you need
-- build it yourself with the instructions and sources prodived
-
 ### Method 1: flash with LEDE images
+Flash your TL-MR3020 with a LEDE image containing everything you need.
+Read the instruction in /baked_firmware
 ### Method 2: build it yourself
+Read the instructions in /sources
+Build it yourself with the instructions and sources provided.
+
+## Acknowledgements
+- respository of Frank Heuer https://gitlab.com/frankrich/sds011_particle_sensor
+- the OpenWRT/LEDE project
+- Luftdaten guys
