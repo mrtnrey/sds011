@@ -9,7 +9,7 @@ If you flash your router,
 - firmware of manufacturer is lost
 - bricking your router is not completely excluded.
 
-Concerning latter point: the TL-MR3020 router can be unbricked quite easily.
+Concerning latter point: the TL-MR3020 router can be unbricked quite easily (own experience...).
 
 ## How to install
 For installing the software, you have two possibilities
