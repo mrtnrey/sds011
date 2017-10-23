@@ -1,5 +1,5 @@
 # Fine dust sensor SDS011 on a flashed router
-Reading a SDS011 sensor on a flashed TP-Link TL-MR3020 running LEDE and send values to madavi.de
+Reading a SDS011 sensor on a flashed TP-Link TL-MR3020 running LEDE and send values to madavi.de.
 
 ## CAUTION
 Although the software is tested & running on my own device, you should be aware of flashing a router is not without risk.
@@ -20,14 +20,17 @@ then you can consider this repository.
 
 ## How to install
 For installing the software, you have two possibilities
+
 ### Method 1: flash with LEDE images
 Flash your TL-MR3020 with a LEDE image containing everything you need.
 Read the instruction in /baked_firmware
+
 ### Method 2: build it yourself
-Read the instructions in /sources
 Build it yourself with the instructions and sources provided.
+This procedure should also hold for other routers than the TL-MR3020.
+Read the instructions in /sources.
 
 ## Acknowledgements
 - respository of Frank Heuer https://gitlab.com/frankrich/sds011_particle_sensor
-- the OpenWRT/LEDE project
-- Luftdaten guys
+- the [OpenWRT](https://www.openwrt.org) / [OpenWRT](https//lede-project.org) project
+- the [Luftdaten](https://luftdaten.info) guys
