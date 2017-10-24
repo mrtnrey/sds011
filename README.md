@@ -28,7 +28,7 @@ Further instructions in the readme of /baked_firmware.
 ### Method 2: build it yourself
 Build it yourself with the instructions and sources provided.
 This procedure should also hold for routers other than the TL-MR3020.
-Further instructions in the readme of /baked_firmware.
+Further instructions in the readme of /source.
 
 ## Acknowledgements
 - respository of Frank Heuer https://gitlab.com/frankrich/sds011_particle_sensor
