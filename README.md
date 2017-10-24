@@ -38,7 +38,8 @@ If you would like your device sending data to Madavi, you have to replace the wo
 ## Dashboard on local webpage
 Inside your LAN you will have a basic webpage [http://tlmr3020](http://tlmr3020/)
 informing you on the latest measurements.
-It is on purpose very light, to keep the load low. See below for a screenshot. The S/N of my device is blurred.
+It is on purpose very light, to keep the load low. The S/N of my device is blurred.
+![SDS011 dashboard screenshot](https://github.com/mrtnrey/sds011/blob/master/SDS011dashbrd.jpg)
 
 ## TO DO
 - Beautify & comment the Python script
@@ -48,8 +49,7 @@ It is on purpose very light, to keep the load low. See below for a screenshot. T
 - ...
 
 ## Acknowledgements
-- respository of Frank Heuer https://gitlab.com/frankrich/sds011_particle_sensor
+- Frank Heuer for [his python script](https://gitlab.com/frankrich/sds011_particle_sensor) that is used here
 - the [OpenWRT](https://www.openwrt.org) / [LEDE](https://lede-project.org) project
 - the [Luftdaten](http://luftdaten.info) guys
 
-![alt text](https://github.com/mrtnrey/sds011/blob/master/SDS011dashbrd.jpg)
