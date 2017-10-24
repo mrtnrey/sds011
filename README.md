@@ -52,4 +52,4 @@ It is on purpose very light, to keep the load low. See below for a screenshot. T
 - the [OpenWRT](https://www.openwrt.org) / [LEDE](https://lede-project.org) project
 - the [Luftdaten](http://luftdaten.info) guys
 
-[[https://github.com/mrtnrey/sds011/blob/master/SDS011dashbrd.jpg]]
+![alt text](https://github.com/mrtnrey/sds011/blob/master/SDS011dashbrd.jpg)
