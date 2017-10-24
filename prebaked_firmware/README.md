@@ -8,9 +8,9 @@ Although no programming of your side is required, it is important to master some
 ### Procedure
 The image is a custom build LEDE image, with the necessary files added.
 
-If you are already running OpenWRT or LEDE on your TL-MR3020, you can flash the firmware with the "sysupgrade" command and the image (lede-17.01.4-ar71xx-generic-tl-mr3020-v1-squashfs-sysupgrade.bin)
+If you are already running OpenWRT or LEDE on your TL-MR3020, you can flash the firmware with the "sysupgrade" command and the image [../blob/master/prebaked_firmware/lede-17.01.4-ar71xx-generic-tl-mr3020-v1-squashfs-sysupgrade.bin]
 
-If you are flashing from the manufacturer's firmware, flash with the Gui and the image (lede-17.01.4-ar71xx-generic-tl-mr3020-v1-squashfs-factory.bin)
+If you are flashing from the manufacturer's firmware, flash with the Gui and the image [../blob/master/prebaked_firmware/lede-17.01.4-ar71xx-generic-tl-mr3020-v1-squashfs-factory.bin]
 
 Before flashing, already connect the SDS011 to the USB port and connect to your LAN with an ethernet cable. After flashing, the router will request an IP address via dhcp through the ethernet port.
 
