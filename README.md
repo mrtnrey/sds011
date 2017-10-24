@@ -22,13 +22,27 @@ then you can consider this repository.
 
 ## How to install
 For installing the software, you have two possibilities
-### Method 1: flash with LEDE images
+#### Method 1: flash with LEDE images
 Flash your TL-MR3020 with a LEDE image containing everything you need.
 Further instructions in the readme of /baked_firmware.
-### Method 2: build it yourself
+#### Method 2: build it yourself
 Build it yourself with the instructions and sources provided.
 This procedure should also hold for routers other than the TL-MR3020.
 Further instructions in the readme of /source.
+
+## After installation.
+The TL-MR3020 expects the SDS011 already connected the USB port while booting.
+In the /root directory you'll find the file tlmr3020sn.txt, containing "TEST".
+If you would like your device sending data to Madavi, you have to replace the word "TEST" with the serial number of your TL-MR3020. This has to be done manually since the TL-MR3020 is ignorant on its own 
+
+Inside your LAN you will have a basic webpage http://tlmr3020
+informing you on the latest measurements.
+It is on purpose very light, to keep the load low.
+
+## TO DO (...any help is appreciated)
+Running the Python script as a service that you can start() and stop().
+Exception handling
+Monitor the memory usage of the router to avoid memory starvation
 
 ## Acknowledgements
 - respository of Frank Heuer https://gitlab.com/frankrich/sds011_particle_sensor
