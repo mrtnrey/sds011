@@ -40,9 +40,10 @@ informing you on the latest measurements.
 It is on purpose very light, to keep the load low.
 
 ## TO DO (...any help is appreciated)
-Running the Python script as a service that you can start() and stop().
-Exception handling
-Monitor the memory usage of the router to avoid memory starvation
+- Beautify & comment the Python script
+- Running the script as a service that you can start() and stop().
+- Exception handling
+- Monitor the memory usage of the router to avoid memory starvation
 
 ## Acknowledgements
 - respository of Frank Heuer https://gitlab.com/frankrich/sds011_particle_sensor
