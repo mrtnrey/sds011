@@ -39,7 +39,10 @@ If you would like your device sending data to Madavi, you have to replace the wo
 Inside your LAN you will have a basic webpage [http://tlmr3020](http://tlmr3020/)
 informing you on the latest measurements.
 It is on purpose very light, to keep the load low. The S/N of my device is blurred.
+
 ![SDS011 dashboard screenshot](https://github.com/mrtnrey/sds011/blob/master/imgs/SDS011dashbrd.jpg)
+*SDS011 local dashboard screenshot*
+
 
 ## TO DO
 - Beautify & comment the Python script
