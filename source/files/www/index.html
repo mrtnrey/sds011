@@ -61,7 +61,7 @@
       </tr>
       <tr>
          <td>Content of latest response</td>
-         <td id="madavirespcontent"></td>
+         <td style="font-size:small" id="madavirespcontent"></td>
       </tr>
       <tr>
          <td>Sensor data on Madavi.de</td>
@@ -69,8 +69,20 @@
       </tr>
    </table>
 
-   <p class="lead">Project on GitHub: <a href="https://github.com/mrtnrey/sds011">https://github.com/mrtnrey/sds011</a><br />
-      Based on the sds011.py module of Frank Heuer: <a href="https://gitlab.com/frankrich/sds011_particle_sensor/">https://gitlab.com/frankrich/sds011_particle_sensor/</a>
+   <h4>Luftdaten</h4>
+   <table class="table table-striped">
+      <tr>
+         <td>Time of latest response</td>
+         <td id="luftdatenresptime"></td>
+      </tr>
+      <tr>
+         <td>Content of latest response</td>
+         <td style="font-size:small" id="luftdatenrespcontent"></td>
+      </tr>
+
+   </table>
+
+   <p class="lead">Project on GitHub: <a href="https://github.com/mrtnrey/sds011">https://github.com/mrtnrey/sds011</a>
    </p>
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -131,7 +143,14 @@
       	$("#madavirespcontent").html(data)
       });
       
+      $.get('luftdatenLatestTime.txt',function(tunix) {
+      	$("#luftdatenresptime").html(timeConverter(tunix)+" LT")
+      });
       
+      $.get('luftdatenLatestResponse.txt',function(data) {
+      	$("#luftdatenrespcontent").html(data)
+      });
+    
       }
       
         loadLatst();
