@@ -53,4 +53,13 @@ Curl and the ca-bundle are needed to upload your data to madavi.de and luftdaten
 
 The last line starts the SDS011 control script, so it is important to have your SDS011 already connected to your flashed router during boot.
 
-In ```/etc/rc.local/network``` the network connection is defined. The flashed router should be connected to your LAN with an ethernet cable. The flashed router is then requesting an IP address and will request the hostname "tlmr3020". Change this if you have other preferences.
+In ```/etc/rc.local/network``` the network connection is defined. The flashed router should be connected to your LAN with an ethernet cable. The flashed router is then requesting an IP address and will request the hostname "tlmr3020". Obviously you can alter this with your prefered settings.
+
+## What if this goes terribly wrong?
+Flashing a router is never without risk. If you flash with an incompatible firmware, your router can become irresponsive ("bricked"). You can consider this a part of the learing process :)
+Anyway, at least for the TL-MR3020 there are excellent cookbooks you can follow to unbrick your router.
+I had the experience myself, and I followed these two guides to successfully unbrick my device:
+[http://techjim.blogspot.be/2014/11/how-to-unbrick-tp-link-mr3020-on-osx.html]
+[http://blog.khairulazam.net/2015/02/16/recover-bricked-tl-mr3020-via-serial-console/]
+One advice is don't give up too quickly.
+
