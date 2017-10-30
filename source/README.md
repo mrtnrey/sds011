@@ -34,4 +34,23 @@ In ```/root```, the main Python scripts are stored, being ... (TO DO)
 
 In  ```/www```, the file ```index.html``` will provide a minimal dashboard for the sensor status.
 
-The most important files, however, are given in ```/config```
+The most important files, however, are given in ```/etc```
+**Since the flash memory of most routers (like the TL-MR3020) is too small to accomodate Python and the necesarry packages, we need to install it in the RAM during boot.**  Every time the device boots, these packges have to be freshly installed.
+Luckily, the file ```/etc/rc.local``` takes care of this.
+
+```
+opkg update
+opkg install python-light -d ram
+opkg install python-pyserial -d ram
+opkg install python-enum34 -d ram
+opkg install python-logging -d ram
+opkg install curl -d ram
+opkg install ca-bundle -d ram
+cd /root && LD_LIBRARY_PATH=/tmp/usr/lib/ ./tlmr3020-sds011.py > /dev/null 2>&1 &
+```
+
+Curl and the ca-bundle are needed to upload your data to madavi.de and luftdaten.info. If you intend to run your sensor strictly locally, you can omit these.
+
+The last line starts the SDS011 control script, so it is important to have your SDS011 already connected to your flashed router during boot.
+
+In ```/etc/rc.local/network``` the network connection is defined. The flashed router should be connected to your LAN with an ethernet cable. The flashed router is then requesting an IP address and will request the hostname "tlmr3020". Change this if you have other preferences.
