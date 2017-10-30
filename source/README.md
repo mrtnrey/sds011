@@ -30,8 +30,8 @@ Now follow the instructions given in /prebaked_firmware
 ## What's in /files ?
 It is important to have some basic understanding of how the flashed device is working.
 
-In /root, the main Python scripts are stored, being ... (TO DO)
+In ```/root```, the main Python scripts are stored, being ... (TO DO)
 
-in /www, the file ```index.html``` will provide a minimal dashboard for the sensor status.
+In  ```/www```, the file ```index.html``` will provide a minimal dashboard for the sensor status.
 
-The 
+The most important files, however, are given in ```/config```
