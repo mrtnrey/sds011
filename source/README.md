@@ -9,7 +9,7 @@ Read the docs on the [LEDE Image Builder](https://lede-project.org/docs/user-gui
 ### 2. Copy the files in /files of the repository to the path of the LEDE image builder
 (TO DO)
 
-### 3. Get an linux machine and install the LEDE image builder
+### 3. Run the LEDE image builder
 We will build a custom stripped-down LEDE image since we want to have some free space on the device in order to keep the system smoothly operating. Therefore, we will omit the LuCI components, so you will not be able to control your flashed device by the web UI. This implies some basic knowledge of Linux and Pyhton of your side (but nothing complicated).
 
 Now issue this build command:
@@ -24,8 +24,10 @@ Basically, it strips down the default image, but it adds these three packages:
 
 Of course, _you should replace the PROFILE with the PROFILE appropriate for your router_, if you have a device other than the TL-MR3020 I am using.
 
+### 4. Flash with the newly generated image
 After successfully building the image, you can retreive it in bin/target/...
 Now follow the instructions given in /prebaked_firmware
+
 
 ## What's in /files ?
 It is important to have some basic understanding of how the flashed device is working.
@@ -54,6 +56,7 @@ Curl and the ca-bundle are needed to upload your data to madavi.de and luftdaten
 The last line starts the SDS011 control script, so it is important to have your SDS011 already connected to your flashed router during boot.
 
 In ```/etc/rc.local/network``` the network connection is defined. The flashed router should be connected to your LAN with an ethernet cable. The flashed router is then requesting an IP address and will request the hostname "tlmr3020". Obviously you can alter this with your prefered settings.
+
 
 ## What if this goes terribly wrong?
 Flashing a router is never without risk. If you flash with an incompatible firmware, your router can become irresponsive ("bricked"). You can consider this a part of the learing process :)
