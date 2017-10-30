@@ -7,6 +7,7 @@ Having an machine running a Debian/Ubuntu or a CentOS/RHEL flavour is necessary.
 Read the docs on the [LEDE Image Builder](https://lede-project.org/docs/user-guide/imagebuilder) before continuing!
 
 ### 2. Copy the files in /files of the repository to the path of the LEDE image builder
+(TO DO)
 
 ### 3. Get an linux machine and install the LEDE image builder
 We will build a custom stripped-down LEDE image since we want to have some free space on the device in order to keep the system smoothly operating. Therefore, we will omit the LuCI components, so you will not be able to control your flashed device by the web UI. This implies some basic knowledge of Linux and Pyhton of your side (but nothing complicated).
@@ -27,3 +28,10 @@ After successfully building the image, you can retreive it in bin/target/...
 Now follow the instructions given in /prebaked_firmware
 
 ## What's in /files ?
+It is important to have some basic understanding of how the flashed device is working.
+
+In /root, the main Python scripts are stored, being ... (TO DO)
+
+in /www, the file ```index.html``` will provide a minimal dashboard for the sensor status.
+
+The 
