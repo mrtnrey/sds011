@@ -16,3 +16,14 @@ Now issue this build command:
 ```bash
 make image PROFILE=tl-mr3020-v1 PACKAGES="-libiwinfo-lua -liblua -libubus-lua -libuci-lua -lua -luci -luci-app-firewall -luci-base -luci-lib-ip -luci-lib-nixio -luci-mod-admin-full -luci-proto-ipv6 -luci-proto-ppp -luci-theme-bootstrap uhttpd kmod-usb-serial-ch341 nano" FILES="files/"
 ```
+Basically, it strips down the default image, but it adds these three packages:
+- uhhtpd: the OpenWRT ultralight web server
+- kmod-usb-serial-ch341: driver for the UART2USB that comes with your SDS011 sensor
+- nano: strictly not needed, but nice to have if you think of Vim being a cleaning product
+
+Of course, _you should replace the PROFILE with the PROFILE appropriate for your router_, if you have a device other than the TL-MR3020 I am using.
+
+After successfully building the image, you can retreive it in bin/target/...
+Now follow the instructions given in /prebaked_firmware
+
+## What's in /files ?
