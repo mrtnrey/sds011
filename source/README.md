@@ -11,8 +11,8 @@ Read the docs on the [LEDE Image Builder](https://lede-project.org/docs/user-gui
 ### 3. Get an linux machine and install the LEDE image builder
 We will build a custom stripped-down LEDE image since we want to have some free space on the device in order to keep the system smoothly operating. Therefore, we will omit the LuCI components, so you will not be able to control your flashed device by the web UI. This implies some basic knowledge of Linux and Pyhton of your side (but nothing complicated).
 
-For the firmware in /baked_firmware, I used this build command
+Now issue this build command:
 
 ```bash
-
+make image PROFILE=tl-mr3020-v1 PACKAGES="-libiwinfo-lua -liblua -libubus-lua -libuci-lua -lua -luci -luci-app-firewall -luci-base -luci-lib-ip -luci-lib-nixio -luci-mod-admin-full -luci-proto-ipv6 -luci-proto-ppp -luci-theme-bootstrap uhttpd kmod-usb-serial-ch341 nano" FILES="files/"
 ```
